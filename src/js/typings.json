@@ -1,0 +1,8 @@
+{
+  "globalDependencies": {
+    "es6-promise": "registry:dt/es6-promise",
+    "jquery": "registry:dt/jquery",
+    "node": "registry:dt/node",
+    "three": "registry:dt/three"
+  }
+}

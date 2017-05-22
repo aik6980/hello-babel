@@ -52,7 +52,7 @@ gulp.task("build_client", ['client_babel', 'client_move']);
 	gulp.task("client_move", function () {
 		var result = gulp.src("src/html/**/*.html")
 			.pipe(gulp.dest("public"));
-		var result = gulp.src("src/js/src/libs/**/*.js")
+		var result = gulp.src("src/js/libs/**/*.js")
 			.pipe(gulp.dest("public/js/libs"));
 		var result = gulp.src("src/js/shaders/**/*.*")
 			.pipe(gulp.dest("public/js/shaders"));
