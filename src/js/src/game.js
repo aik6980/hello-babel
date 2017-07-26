@@ -93,7 +93,7 @@ function init() {
     scene.add(box);
 
     init_scene();
-    init_postprocess(renderer);
+    //init_postprocess(renderer);
 }
 
 function render() {
