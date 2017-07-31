@@ -13,21 +13,22 @@ var gulp = require("gulp");
 var babel = require("gulp-babel");
 var sourcemaps = require("gulp-sourcemaps");
 var concat = require('gulp-concat');
-var sass = require('gulp-sass');
+//var sass = require('gulp-sass');
 var clean = require('gulp-clean');
 
-gulp.task("default", ['build_client', 'sass']);
+// gulp.task("default", ['build_client', 'sass']);
 
-gulp.task("dev", ['default'], function () {
-    gulp.watch('src/js/client/**/*.*', ['build_client']);
-    gulp.watch('src/sass/**/*.*', ['sass']);
-});
+// gulp.task("dev", ['default'], function () {
+//     gulp.watch('src/js/client/**/*.*', ['build_client']);
+//     gulp.watch('src/sass/**/*.*', ['sass']);
+// });
 
-gulp.task('sass', function () {
-    return gulp.src('src/sass/**/*.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('public/css'));
-});
+// gulp.task('sass', function () {
+//     return gulp.src('src/sass/**/*.scss')
+//         .pipe(sass().on('error', sass.logError))
+//         .pipe(gulp.dest('public/css'));
+// });
+
 
 function babel_process( project_path, output_path, output_filename, srcmaps_sourceroot ) {
 	
@@ -43,7 +44,7 @@ function babel_process( project_path, output_path, output_filename, srcmaps_sour
 
 gulp.task("build_client", ['client_babel', 'client_move']);
 {
-	var client_project_params = [ "src/js/src/**/*.js", "public/js", "game.js", "../.."];
+	var client_project_params = [ ["src/js/src/**/*.js", "src/js/src/**/*.jsx"], "public/js", "game.js", "../.."];
 
 	gulp.task("client_babel", function() {
 		return babel_process( client_project_params[0], client_project_params[1], client_project_params[2], client_project_params[3] ) 
