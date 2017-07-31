@@ -1,6 +1,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import * as THREE from '../libs/three.min.js';
 
 ReactDOM.render(
     <h1>Hello React!</h1>,
