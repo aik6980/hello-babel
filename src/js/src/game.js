@@ -1,12 +1,14 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import * as THREE from '../libs/three.min.js';
+import * as COM from './component.jsx';
 
 ReactDOM.render(
     <h1>Hello React!</h1>,
     document.getElementById('react-hello')
 );
+
+COM.foo();
 
 let scene;
 let camera;
