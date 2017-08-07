@@ -8,8 +8,6 @@ ReactDOM.render(
     document.getElementById('react-hello')
 );
 
-COM.foo();
-
 let scene;
 let camera;
 let renderer;
