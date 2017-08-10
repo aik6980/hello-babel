@@ -13,7 +13,7 @@ var gulp = require("gulp");
 var babel = require("gulp-babel");
 var sourcemaps = require("gulp-sourcemaps");
 var concat = require('gulp-concat');
-//var sass = require('gulp-sass');
+var sass = require('gulp-sass');
 var clean = require('gulp-clean');
 
 // gulp.task("default", ['build_client', 'sass']);
@@ -23,11 +23,11 @@ var clean = require('gulp-clean');
 //     gulp.watch('src/sass/**/*.*', ['sass']);
 // });
 
-// gulp.task('sass', function () {
-//     return gulp.src('src/sass/**/*.scss')
-//         .pipe(sass().on('error', sass.logError))
-//         .pipe(gulp.dest('public/css'));
-// });
+gulp.task('sass', function () {
+    return gulp.src('src/sass/**/*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('public/css'));
+});
 
 
 function babel_process( project_path, output_path, output_filename, srcmaps_sourceroot ) {

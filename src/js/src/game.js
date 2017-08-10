@@ -3,10 +3,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as COM from './component.jsx';
 
+/*
 ReactDOM.render(
     <h1>Hello React!</h1>,
     document.getElementById('react-hello')
 );
+*/
+
+var shopping_list = {title: "Today's shopping list", item0: "Chicken"};
+ReactDOM.render( <COM.SHOPPING_LIST vars={shopping_list} />
+    , document.getElementById('react-hello'))
 
 let scene;
 let camera;
