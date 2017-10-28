@@ -1,7 +1,10 @@
 
+import * as THREE from "../libs/three.js";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as COM from './component.jsx';
+
+
 
 /*
 ReactDOM.render(
