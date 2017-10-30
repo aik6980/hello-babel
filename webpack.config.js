@@ -1,24 +1,14 @@
 const PATH = require('path');
-const CLEAN_WEBPACK_PLUGIN = require('clean-webpack-plugin');
-const COPY_WEBPACK_PLUGIN = require('copy-webpack-plugin');
 const WEBPACK = require('webpack');
 
 module.exports = {
     entry: {
-        vendor: [ __dirname + "/src/js/libs/three.js",
-        'react',
-        'react-dom'], 
-        game: __dirname + '/src/js/src/game.js',
+        game: __dirname + '/src/js/src/game.js'
     },
     plugins: [
-        new CLEAN_WEBPACK_PLUGIN(['public']),
-        new COPY_WEBPACK_PLUGIN([
-            { context: 'src/html', from : '*' , to: __dirname + '/public'},
-            { context: 'src/js/shaders', from : '**/*' , to: __dirname + '/public/js/shaders'}
-        ]),
-        new WEBPACK.optimize.CommonsChunkPlugin({
-            name: "vendor",
-            filename: "vendor.js"
+        new WEBPACK.DllReferencePlugin({
+            context: __dirname,
+            manifest: require('./public/js/vendor-manifest.json')
         })
     ],
     module: {
@@ -31,7 +21,7 @@ module.exports = {
         ]
     },
     output: {
-        filename: 'game.js',
+        filename: '[name].js',
         path: __dirname + '/public/js'
     }
 };
